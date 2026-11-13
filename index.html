@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Serenus · Danışma Merkezi Yönetim Sistemi</title>
 <meta name="description" content="Serenus, bireysel terapist değil danışma merkezi için tasarlandı: randevu, danışan dosyası, kasa, uzman hakedişi, personel izni ve gün sonu özeti tek panelde.">
-<meta name="theme-color" content="#0A1722">
+<meta name="theme-color" content="#10283A">
 <link rel="icon" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0A1722;--bg2:#0E202E;--card:#112635;--line:#1E3A4B;--ink:#E8F1F4;--mut:#93AEB9;--cy:#22C5D6;--cy2:#7EE3EE;--warm:#F2C98B;--ok:#4FD1A0;--r:18px}
+:root{--bg:#10283A;--bg2:#153247;--card:#1A3B53;--line:#2B506A;--ink:#E8F1F4;--mut:#A6C0CB;--cy:#22C5D6;--cy2:#7EE3EE;--warm:#F2C98B;--ok:#4FD1A0;--r:18px}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font:400 17px/1.7 Manrope,system-ui,sans-serif;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));overflow-x:hidden}
@@ -29,12 +29,12 @@ section{padding-block:clamp(64px,9vw,116px)}
 .b1{background:var(--cy);color:#06222A}.b1:hover{background:var(--cy2);transform:translateY(-1px)}
 .b2{border-color:var(--line);color:var(--ink)}.b2:hover{border-color:var(--cy)}
 /* nav */
-nav{position:sticky;top:0;z-index:20;background:rgba(10,23,34,.82);backdrop-filter:blur(12px);margin-inline:calc(-1*max(20px,env(safe-area-inset-left)));padding-inline:max(20px,env(safe-area-inset-left));border-bottom:1px solid transparent}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,40,58,.86);backdrop-filter:blur(12px);margin-inline:calc(-1*max(20px,env(safe-area-inset-left)));padding-inline:max(20px,env(safe-area-inset-left));border-bottom:1px solid transparent}
 nav .w{display:flex;align-items:center;justify-content:space-between;height:88px;gap:16px}
 nav img{height:64px;width:auto;display:block}
 nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:14.5px;font-weight:600;color:var(--mut)}
 nav ul a{text-decoration:none}nav ul a:hover{color:var(--ink)}
-nav .btn{padding:10px 20px;font-size:14px}
+.na{display:flex;align-items:center;gap:20px}.gr{font:700 14.5px Manrope,sans-serif;text-decoration:none;color:var(--ink);padding:10px 4px;white-space:nowrap}.gr:hover{color:var(--cy)}nav .btn{padding:10px 20px;font-size:14px;white-space:nowrap}
 /* hero */
 .hero{padding-top:clamp(40px,7vw,90px)}
 .hg{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
@@ -106,7 +106,7 @@ summary:after{content:"+";color:var(--cy);font-size:26px;line-height:1}
 details[open] summary:after{content:"–"}
 details p{margin-top:12px;max-width:72ch}
 /* contact */
-.ct{background:linear-gradient(160deg,#0F2C3A,#0A1B28);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.ct{background:linear-gradient(160deg,#1B4258,#123044);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:48px}
 form{display:grid;gap:14px}
 label{font-size:13px;font-weight:600;color:var(--mut);display:grid;gap:6px}
 input,textarea,select{font:500 16px Manrope;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
@@ -119,19 +119,18 @@ footer p{text-align:left}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media(max-width:960px){.hg,.sec,.ct{grid-template-columns:1fr;gap:36px}.fg{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}nav ul{display:none}}
-@media(max-width:620px){body{font-size:16px}.cmp,.fg{grid-template-columns:1fr}.tl:before{left:5px}.st{grid-template-columns:1fr}.st:after{left:0;top:6px}.st time{padding:0 0 6px 34px}.st>div{padding-left:34px}.kp{grid-template-columns:1fr 1fr 1fr;gap:6px}.kp strong{font-size:18px}.rw{grid-template-columns:46px 1fr auto}.cta .btn{width:100%;justify-content:center}nav img{height:50px}}
+@media(max-width:620px){body{font-size:16px}.cmp,.fg{grid-template-columns:1fr}.tl:before{left:5px}.st{grid-template-columns:1fr}.st:after{left:0;top:6px}.st time{padding:0 0 6px 34px}.st>div{padding-left:34px}.kp{grid-template-columns:1fr 1fr 1fr;gap:6px}.kp strong{font-size:18px}.rw{grid-template-columns:46px 1fr auto}.cta .btn{width:100%;justify-content:center}nav img{height:46px}.na{gap:10px}nav .btn{padding:9px 14px;font-size:13px}.gr{font-size:13px}}
 </style>
 </head>
 <body>
 <nav><div class="w">
 <a href="#" aria-label="Serenus"><img src="logo-yatay.png" alt="Serenus" width="208" height="64"></a>
 <ul><li><a href="#gun">Bir gün</a></li><li><a href="#ozellik">Özellikler</a></li><li><a href="#guvenlik">Güvenlik</a></li><li><a href="#baslangic">Başlangıç</a></li><li><a href="#sss">SSS</a></li></ul>
-<a class="btn b1" href="#iletisim">Demo iste</a>
+<div class="na"><a class="gr" href="https://demo.serenus.com.tr">Giriş yap</a><a class="btn b1" href="#iletisim">Demo iste</a></div>
 </div></nav>
 
 <header class="hero"><div class="w hg">
 <div>
-<span class="eyebrow">Danışma merkezleri için</span>
 <h1>Merkezinizin bir günü, <em>tek ekranda.</em></h1>
 <p class="lead">Çoğu yazılım tek bir terapist için yapılmıştır. Serenus ise bir merkezin gerçek sorularına göre kuruldu: Hangi uzman hangi odada? Bugün kasaya ne girdi? Kim izinde? Ay sonunda kime ne ödenecek? Sabah kapıyı açtığınız andan gün sonu özetine kadar her şey aynı yerde.</p>
 <div class="cta"><a class="btn b1" href="#iletisim">Canlı demo iste →</a><a class="btn b2" href="#gun">Bir günü izleyin</a></div>
@@ -165,14 +164,14 @@ footer p{text-align:left}
 <section id="gun" class="day"><div class="w">
 <span class="eyebrow rv">Bir merkez günü</span>
 <h2 class="rv">Sabah 08:30'dan <em>gün sonuna.</em></h2>
-<p class="rv" style="margin-top:22px;max-width:70ch">Özellik listesi yerine, bir müdürün gününü izleyin. Serenus'un her parçası, günün belirli bir anındaki gerçek bir ihtiyaca karşılık gelir.</p>
+<p class="rv" style="margin-top:22px;max-width:70ch">Serenus'un bir merkezde gün boyu nasıl çalıştığını sırayla görün.</p>
 <div class="tl">
 <div class="st rv"><time>08:30</time><div><h3>Gün açılır</h3><p>Takvim sizi karşılar: hangi uzman hangi odada, kimler geliyor, kimler iptal etti. Uzmanlar ve odalar renklerle ayrılır; çakışma olursa panel sizi uyarır.</p></div></div>
 <div class="st rv"><time>10:00</time><div><h3>Danışan kabul edilir</h3><p>Danışan dosyası, görüşme notları, evrak ve onam formları tek kayıtta durur. Notlara yalnızca yetkili kişiler erişir, yetkisi olmayan çalışan göremez.</p></div></div>
-<div class="st rv"><time>12:30</time><div><h3>Hatırlatmalar kendiliğinden gider</h3><p>Yarınki seanslar için danışanlara hatırlatma gönderilir. Gelmeme oranı düşer, resepsiyonun telefon yükü azalır.</p></div></div>
+<div class="st rv"><time>12:30</time><div><h3>Hatırlatmalar kendiliğinden gider</h3><p>Yarınki seanslar için danışanlara hatırlatma gönderilir. İptal oranı düşer, sekreterin telefon yükü azalır.</p></div></div>
 <div class="st rv"><time>16:00</time><div><h3>Ödeme alınır, kasa işler</h3><p>Nakit, kart veya havale; her tahsilat seansa ve uzmana bağlanır. Seans paketi, borç ve alacak durumu danışan kartında görünür.</p></div></div>
 <div class="st rv"><time>18:30</time><div><h3>Gün sonu özeti</h3><p>Kaç seans yapıldı, ne tahsil edildi, kasada ne var; tek sayfada, çıktı alınabilir biçimde. Kapanışta kasayı elle saymak zorunda kalmazsınız.</p></div></div>
-<div class="st rv"><time>Ay sonu</time><div><h3>Hakediş ve personel</h3><p>Uzman hakedişi, merkezinizin kendi kuralına göre hesaplanır: yüzde pay, seans başı sabit ücret, maaş ya da bunların birleşimi. Personel izinleri, kıdem süreleri ve logolu izin formları da aynı panelde.</p></div></div>
+<div class="st rv"><time>Ay sonu</time><div><h3>Hakediş ve personel</h3><p>Uzman hakedişi merkezinizin kuralına göre hesaplanır. Personel izinleri, kıdem süreleri ve logolu izin formları da aynı panelde.</p></div></div>
 </div>
 </div></section>
 
@@ -183,9 +182,9 @@ footer p{text-align:left}
 <div class="f rv"><i>📅</i><h3>Çok uzmanlı takvim</h3><p>Uzman, oda ve danışan bazında görünüm. Tekrarlayan seanslar ve çakışma uyarısı.</p></div>
 <div class="f rv"><i>🗂️</i><h3>Danışan dosyası</h3><p>Kişisel bilgiler, görüşme notları, evraklar ve geçmiş seanslar tek kayıtta.</p></div>
 <div class="f rv"><i>✍️</i><h3>Onam ve evrak</h3><p>Dijital onam formları ve yüklenen belgeler danışanın dosyasında saklanır.</p></div>
-<div class="f rv"><i>💬</i><h3>Hatırlatma</h3><p>Seans öncesi otomatik hatırlatma ile gelmeme oranını azaltın.</p></div>
+<div class="f rv"><i>💬</i><h3>Hatırlatma</h3><p>Seans öncesi otomatik hatırlatma ile iptal oranını azaltın.</p></div>
 <div class="f rv"><i>💳</i><h3>Kasa ve tahsilat</h3><p>Nakit, kart, havale. Seans paketi, borç ve alacak takibi.</p></div>
-<div class="f rv"><i>⚖️</i><h3>Uzman hakedişi</h3><p>Yüzde, sabit ücret ya da maaş: hakediş kuralını merkeziniz belirler.</p></div>
+<div class="f rv"><i>⚖️</i><h3>Uzman hakedişi</h3><p>Uzman hakedişi, merkezinizin kendi kuralına göre hesaplanır.</p></div>
 <div class="f rv"><i>👥</i><h3>Personel ve izin</h3><p>Personel kartı, kıdem hesabı ve antetli izin formu, tek tıkla.</p></div>
 <div class="f rv"><i>🖨️</i><h3>Kurum kimliğiyle çıktı</h3><p>Logonuz ve iletişim bilgilerinizle antetli çıktılar. Ayarlardan kendiniz düzenlersiniz.</p></div>
 </div>
@@ -199,7 +198,7 @@ footer p{text-align:left}
 </div>
 <div class="sl">
 <div class="rv"><i>🔐</i><span><b>İki aşamalı giriş</b><p>Panele girişte şifrenin yanında doğrulama uygulaması kodu istenir.</p></span></div>
-<div class="rv"><i>🧩</i><span><b>Rol bazlı yetki</b><p>Yönetici, uzman ve resepsiyon farklı şeyler görür. Hassas notlar yalnızca yetkili kişiye açılır.</p></span></div>
+<div class="rv"><i>🧩</i><span><b>Rol bazlı yetki</b><p>Yönetici, uzman ve sekreter farklı şeyler görür. Hassas notlar yalnızca yetkili kişiye açılır.</p></span></div>
 <div class="rv"><i>🗄️</i><span><b>Merkeze özel veri tabanı</b><p>Verileriniz kendi alt alan adınızda, yalnızca size ait ayrı bir sistemde durur.</p></span></div>
 <div class="rv"><i>🌍</i><span><b>Avrupa'da barındırma</b><p>Sunucular Avrupa Birliği içindeki veri merkezlerinde, şifreli bağlantıyla çalışır.</p></span></div>
 </div>
@@ -211,25 +210,23 @@ footer p{text-align:left}
 <div class="steps">
 <div class="sp rv"><h3>Demo ile tanışın</h3><p>Örnek verilerle dolu canlı panelde dilediğiniz gibi gezin. Önce görmeden karar vermeniz gerekmez.</p></div>
 <div class="sp rv"><h3>Merkeziniz kurulsun</h3><p>Logonuz, renkleriniz ve antet bilgilerinizle kendi paneliniz hazırlanır.<br><span class="url">merkeziniz.serenus.com.tr</span></p></div>
-<div class="sp rv"><h3>Ekibinizle kullanmaya başlayın</h3><p>Uzmanlarınızı ve personelinizi ekleyin, yetkilerini belirleyin. Takıldığınız yerde doğrudan bizimle konuşursunuz.</p></div>
+<div class="sp rv"><h3>Ekibinizle kullanmaya başlayın</h3><p>Uzmanlarınızı ve personelinizi ekleyin, yetkilerini belirleyin. Takıldığınız yerde bizimle iletişime geçin.</p></div>
 </div>
 </div></section>
 
 <section class="day"><div class="w" style="max-width:820px">
 <span class="eyebrow rv">Kimden geliyor</span>
 <h2 class="rv">Bir danışma merkezinin içinden, <em>merkezler için.</em></h2>
-<p class="rv" style="margin-top:22px">Serenus, Antalya'da çalışan bir danışma merkezinin ihtiyaçlarından doğdu ve bugün o merkezde her gün kullanılıyor. Bu yüzden ekranlar, bir müdürün gün içinde gerçekten yaptığı işlere göre sıralanmıştır. Her yeni merkezle birlikte, farklı çalışma biçimlerine uyum sağlamak için sistemi birlikte şekillendiriyoruz.</p>
+<p class="rv" style="margin-top:22px">Serenus, bir danışma merkezinin gerçek ihtiyaçlarından doğdu ve bugün o merkezde her gün kullanılıyor. Bu yüzden ekranlar, bir kurucunun gün içinde gerçekten yaptığı işlere göre sıralanmıştır. Her yeni merkezle birlikte, farklı çalışma biçimlerine uyum sağlamak için sistemi birlikte şekillendiriyoruz.</p>
 </div></section>
 
 <section id="sss"><div class="w" style="max-width:820px">
 <span class="eyebrow rv">Sık sorulanlar</span>
 <h2 class="rv" style="margin-bottom:30px">Merak edilenler</h2>
-<details class="rv"><summary>Fiyatlandırma nasıl?</summary><p>Fiyat; uzman sayısına ve ihtiyaç duyduğunuz modüllere göre değişir. Merkezinizi dinleyip size özel teklif hazırlıyoruz. Demo talep ederek başlayabilirsiniz.</p></details>
 <details class="rv"><summary>Mevcut kayıtlarımızı aktarabilir miyiz?</summary><p>Evet. Excel ya da benzeri bir dosyada tuttuğunuz danışan ve randevu bilgileri kurulum sırasında sisteme aktarılabilir.</p></details>
-<details class="rv"><summary>Hakediş hesabını kendi kuralımıza göre yapabilir miyiz?</summary><p>Her merkezin hakediş düzeni farklıdır. Serenus'u yüzde pay, seans başı sabit ücret, maaş ya da bunların birleşimi gibi merkezinizin kuralına uyarlıyoruz.</p></details>
+<details class="rv"><summary>Hakediş hesabını kendi kuralımıza göre yapabilir miyiz?</summary><p>Her merkezin hakediş düzeni farklıdır. Serenus'u merkezinizin kendi hakediş kuralına uyarlıyoruz.</p></details>
 <details class="rv"><summary>Telefondan kullanılabilir mi?</summary><p>Evet. Panel telefon, tablet ve bilgisayarda çalışır; ana ekrana eklenerek uygulama gibi kullanılabilir.</p></details>
 <details class="rv"><summary>Kişisel verilerin korunması (KVKK) nasıl ele alınıyor?</summary><p>Sistem, KVKK ilkeleri gözetilerek tasarlandı: iki aşamalı giriş, rol bazlı yetki ve merkeze özel ayrı veri tabanı. Merkezinizin aydınlatma metni ve hukuki süreçleri için ayrıca kendi hukuk danışmanınızla çalışmanızı öneririz.</p></details>
-<details class="rv"><summary>Sözleşme ya da taahhüt var mı?</summary><p>Koşullar teklifte açıkça yazılır. Önce demoyu inceler, sonra karar verirsiniz.</p></details>
 </div></section>
 
 <section id="iletisim"><div class="w">
@@ -237,7 +234,7 @@ footer p{text-align:left}
 <div>
 <span class="eyebrow">Demo talebi</span>
 <h2>Merkezinizi <em>birlikte</em> konuşalım.</h2>
-<p style="margin-top:22px">Formu doldurun; örnek verilerle hazırlanmış canlı demoyu ve merkezinize uygun teklifi size iletelim.</p>
+<p style="margin-top:22px">Formu doldurun; örnek verilerle hazırlanmış canlı demoyu size iletelim.</p>
 <p class="note" id="ctinfo" style="margin-top:22px"></p>
 </div>
 <form id="f" novalidate>

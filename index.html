@@ -39,6 +39,7 @@ nav ul a{text-decoration:none}nav ul a:hover{color:var(--ink)}
 /* hero */
 .hero{padding-top:clamp(40px,7vw,90px)}
 .hg{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hg>*{min-width:0}
 .hero p.lead{font-size:19px;margin:26px 0 34px;max-width:54ch}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 .note{margin-top:18px;font-size:13.5px;color:var(--mut);text-align:left}
@@ -54,6 +55,18 @@ nav ul a{text-decoration:none}nav ul a:hover{color:var(--ink)}
 .kp strong{font:600 22px Poppins,sans-serif}
 .kp .up{color:var(--ok)}
 .rows{display:flex;flex-direction:column;gap:8px}
+.mt{display:flex;gap:6px;margin-bottom:16px;background:var(--bg2);border-radius:999px;padding:4px;position:relative}
+.mt button{flex:1;border:0;background:none;color:var(--mut);font:700 13px Manrope,sans-serif;padding:9px 6px;border-radius:999px;cursor:pointer;transition:.25s;white-space:nowrap}
+.mt button.on{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(11,42,63,.14)}
+.vp{overflow:hidden;border-radius:12px}
+.trk{display:flex;transition:transform .6s cubic-bezier(.65,0,.25,1)}
+.sl1{flex:0 0 100%;min-width:0}
+.rw b.am{font:600 14px Poppins,sans-serif;color:var(--ink)}
+.cal{display:grid;grid-template-columns:34px repeat(5,1fr);gap:5px;align-items:stretch}
+.cal i{font:700 11.5px Manrope,sans-serif;font-style:normal;color:var(--mut);text-align:center;letter-spacing:.04em;padding-bottom:4px}
+.cal time{font:600 11.5px ui-monospace,Menlo,monospace;color:var(--mut);display:flex;align-items:center}
+.cal u{text-decoration:none;min-width:0;min-height:40px;border-radius:8px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font:700 10.5px Manrope,sans-serif;overflow:hidden}
+.cal u.e{color:#04202A}.cal u.a{background:#9FE6EE}.cal u.b{background:#BFD4F5}.cal u.c{background:#F6DDB0}
 .rw{display:grid;grid-template-columns:54px 1fr auto;gap:12px;align-items:center;background:var(--bg2);border-radius:12px;padding:10px 12px;font-size:14px}
 .rw time{font:600 13px ui-monospace,Menlo,monospace;color:var(--cy)}
 .rw span{color:var(--mut);font-size:12.5px;display:block}
@@ -133,19 +146,43 @@ footer p{text-align:left}
 <header class="hero"><div class="w hg">
 <div>
 <h1>Merkezinizin bir günü, <em>tek ekranda.</em></h1>
-<p class="lead">Çoğu yazılım tek bir terapist için yapılmıştır. Serenus ise bir merkezin gerçek sorularına göre kuruldu: Hangi uzman hangi odada? Bugün kasaya ne girdi? Kim izinde? Ay sonunda kime ne ödenecek? Sabah kapıyı açtığınız andan gün sonu özetine kadar her şey aynı yerde.</p>
+<p class="lead">Çoğu yazılım tek bir terapist için yapılmıştır. Serenus ise bir merkezin gerçek sorularına göre kuruldu: Hangi uzman hangi odada? Bugün kasaya ne girdi? Hangi randevu iptal oldu? Ay sonunda kime ne ödenecek? Sabah kapıyı açtığınız andan gün sonu özetine kadar her şey aynı yerde.</p>
 <div class="cta"><a class="btn b1" href="#iletisim">Canlı demo iste →</a><a class="btn b2" href="#gun">Bir günü izleyin</a></div>
 <p class="note">Kurulum merkeze özel yapılır. Verileriniz yalnızca sizin alan adınızda ve sizin veri tabanınızda durur.</p>
 </div>
-<div class="mock rv" aria-label="Gün sonu özeti örnek ekran">
-<div class="mh"><div class="dots"><i></i><i></i><i></i></div><span>Örnek veri</span></div>
-<div class="mh" style="margin-top:-4px"><b>Gün Sonu Özeti</b><span>14 Kasım</span></div>
-<div class="kp"><div><small>SEANS</small><strong>23</strong></div><div><small>TAHSİLAT</small><strong>41.600 ₺</strong></div><div><small>KASA</small><strong class="up">+3.200</strong></div></div>
+<div class="mock rv" id="mk" aria-label="Panel örnek ekranları">
+<div class="mt" role="tablist"><button class="on" role="tab" data-i="0">Randevu takibi</button><button role="tab" data-i="1">Takvim</button><button role="tab" data-i="2">Gün sonu</button></div>
+<div class="vp"><div class="trk" id="trk">
+<div class="sl1">
+<div class="mh"><b>Bugünün randevuları</b><span>Örnek veri</span></div>
+<div class="kp"><div><small>RANDEVU</small><strong>23</strong></div><div><small>GELEN</small><strong class="up">14</strong></div><div><small>İPTAL</small><strong>2</strong></div></div>
 <div class="rows">
 <div class="rw"><time>09:00</time><div>Ayşe K. · Bireysel<span>Oda 2 · Uzm. Psk. Demir</span></div><span class="tag">Geldi</span></div>
 <div class="rw"><time>10:30</time><div>Çift terapisi<span>Oda 1 · Uzm. Psk. Yıldız</span></div><span class="tag">Geldi</span></div>
 <div class="rw"><time>13:00</time><div>Çocuk değerlendirme<span>Oda 3 · Dr. Kaya</span></div><span class="tag w2">Hatırlatıldı</span></div>
 <div class="rw"><time>15:30</time><div>Aile danışmanlığı<span>Oda 1 · Uzm. Psk. Demir</span></div><span class="tag w2">Bekleniyor</span></div>
+</div></div>
+<div class="sl1">
+<div class="mh"><b>Haftalık takvim</b><span>Örnek veri</span></div>
+<div class="cal">
+<span></span><i>Pzt</i><i>Sal</i><i>Çar</i><i>Per</i><i>Cum</i>
+<time>09</time><u></u><u class="e a">Demir</u><u></u><u class="e b">Yıldız</u><u class="e a">Demir</u>
+<time>10</time><u class="e b">Yıldız</u><u></u><u class="e c">Kaya</u><u class="e a">Demir</u><u></u>
+<time>11</time><u class="e a">Demir</u><u class="e c">Kaya</u><u></u><u></u><u class="e b">Yıldız</u>
+<time>13</time><u></u><u class="e b">Yıldız</u><u class="e a">Demir</u><u class="e c">Kaya</u><u class="e a">Demir</u>
+<time>14</time><u class="e c">Kaya</u><u></u><u class="e b">Yıldız</u><u></u><u class="e c">Kaya</u>
+<time>15</time><u class="e a">Demir</u><u class="e a">Demir</u><u></u><u class="e b">Yıldız</u><u></u>
+</div></div>
+<div class="sl1">
+<div class="mh"><b>Gün Sonu Özeti</b><span>14 Kasım</span></div>
+<div class="kp"><div><small>SEANS</small><strong>23</strong></div><div><small>TAHSİLAT</small><strong>41.600 ₺</strong></div><div><small>KASA</small><strong class="up">+3.200</strong></div></div>
+<div class="rows">
+<div class="rw"><time>Nakit</time><div>Uzm. Psk. Demir<span>8 seans</span></div><b class="am">14.400 ₺</b></div>
+<div class="rw"><time>Kart</time><div>Uzm. Psk. Yıldız<span>9 seans</span></div><b class="am">17.200 ₺</b></div>
+<div class="rw"><time>Havale</time><div>Dr. Kaya<span>6 seans</span></div><b class="am">10.000 ₺</b></div>
+<div class="rw"><time>Kasa</time><div>Gün kapanışı<span>Çıktı alınabilir</span></div><span class="tag">Hazır</span></div>
+</div></div>
+</div></div>
 </div>
 </div>
 </div></header>
@@ -153,12 +190,12 @@ footer p{text-align:left}
 <section id="fark"><div class="w">
 <span class="eyebrow rv">Neden Serenus</span>
 <h2 class="rv">Tek terapistin değil, <em>merkezin</em> yazılımı.</h2>
-<p class="rv" style="margin-top:22px;max-width:70ch">Bir merkezi yönetmek, birkaç randevuyu takip etmekten çok daha fazlasıdır. Odalar, uzmanlar, kasa, hakediş, personel, evrak ve onam formları birbirine bağlıdır. Bu yüzden Serenus'u bir danışma merkezinin içinden, her gün kullanılarak geliştirdik. Eksik olanı değil, gerçekten ihtiyaç duyulanı yaptık.</p>
+<p class="rv" style="margin-top:22px;max-width:70ch">Bir merkezi yönetmek, birkaç randevuyu takip etmekten çok daha fazlasıdır. Odalar, uzmanlar, kasa, hakediş, resmi yazışmalar, evrak ve onam formları birbirine bağlıdır. Bu yüzden Serenus'u bir danışma merkezinin içinden, her gün kullanılarak geliştirdik. Eksik olanı değil, gerçekten ihtiyaç duyulanı yaptık.</p>
 <div class="cmp">
 <div class="cc"><h3>Genel randevu yazılımları</h3><small>Bireysel terapist için kurgulanmış</small><ul>
-<li>Tek kişilik takvim mantığı</li><li>Uzman payı ve kasa ayrı bir dert olarak kalır</li><li>Personel izni ve kıdemi dışarıda</li><li>Çıktılar genel şablonla, kurum kimliği yok</li></ul></div>
+<li>Tek kişilik takvim mantığı</li><li>Uzman payı ve kasa ayrı bir dert olarak kalır</li><li>Resmi kurum yazışmaları defterde ya da dosyalarda dağınık</li><li>Çıktılar genel şablonla, kurum kimliği yok</li></ul></div>
 <div class="cc us"><h3>Serenus</h3><small>Merkez yönetimi için kurgulanmış</small><ul>
-<li>Çok uzmanlı, çok odalı takvim</li><li>Tahsilat, kasa ve uzman hakedişi aynı akışta</li><li>Personel kartı, izin takibi ve kıdem hesabı</li><li>Logolu, antetli çıktılar: izin formu, makbuz, raporlar</li></ul></div>
+<li>Çok uzmanlı, çok odalı takvim</li><li>Tahsilat, kasa ve uzman hakedişi aynı akışta</li><li>Resmi kurumlardan gelen ve giden yazıların kaydı</li><li>Logolu, antetli çıktılar: makbuz, rapor, yazı</li></ul></div>
 </div>
 </div></section>
 
@@ -172,7 +209,7 @@ footer p{text-align:left}
 <div class="st rv"><time>12:30</time><div><h3>Hatırlatmalar kendiliğinden gider</h3><p>Yarınki seanslar için danışanlara hatırlatma gönderilir. İptal oranı düşer, sekreterin telefon yükü azalır.</p></div></div>
 <div class="st rv"><time>16:00</time><div><h3>Ödeme alınır, kasa işler</h3><p>Nakit, kart veya havale; her tahsilat seansa ve uzmana bağlanır. Seans paketi, borç ve alacak durumu danışan kartında görünür.</p></div></div>
 <div class="st rv"><time>18:30</time><div><h3>Gün sonu özeti</h3><p>Kaç seans yapıldı, ne tahsil edildi, kasada ne var; tek sayfada, çıktı alınabilir biçimde. Kapanışta kasayı elle saymak zorunda kalmazsınız.</p></div></div>
-<div class="st rv"><time>Ay sonu</time><div><h3>Hakediş ve personel</h3><p>Uzman hakedişi merkezinizin kuralına göre hesaplanır. Personel izinleri, kıdem süreleri ve logolu izin formları da aynı panelde.</p></div></div>
+<div class="st rv"><time>Ay sonu</time><div><h3>Hakediş ve resmi yazışmalar</h3><p>Uzman hakedişi merkezinizin kuralına göre hesaplanır. Resmi kurumlardan gelen ve giden yazılar da aynı panelde kayıtlı kalır.</p></div></div>
 </div>
 </div></section>
 
@@ -186,7 +223,7 @@ footer p{text-align:left}
 <div class="f rv"><i>💬</i><h3>Hatırlatma</h3><p>Seans öncesi otomatik hatırlatma ile iptal oranını azaltın.</p></div>
 <div class="f rv"><i>💳</i><h3>Kasa ve tahsilat</h3><p>Nakit, kart, havale. Seans paketi, borç ve alacak takibi.</p></div>
 <div class="f rv"><i>⚖️</i><h3>Uzman hakedişi</h3><p>Uzman hakedişi, merkezinizin kendi kuralına göre hesaplanır.</p></div>
-<div class="f rv"><i>👥</i><h3>Personel ve izin</h3><p>Personel kartı, kıdem hesabı ve antetli izin formu, tek tıkla.</p></div>
+<div class="f rv"><i>📨</i><h3>Gelen–giden evrak</h3><p>Resmi kurumlardan gelen ve kurumlara giden yazılar tarih ve sayıyla kayıt altında.</p></div>
 <div class="f rv"><i>🖨️</i><h3>Kurum kimliğiyle çıktı</h3><p>Logonuz ve iletişim bilgilerinizle antetli çıktılar. Ayarlardan kendiniz düzenlersiniz.</p></div>
 </div>
 </div></section>
@@ -211,7 +248,7 @@ footer p{text-align:left}
 <div class="steps">
 <div class="sp rv"><h3>Demo ile tanışın</h3><p>Örnek verilerle dolu canlı panelde dilediğiniz gibi gezin. Önce görmeden karar vermeniz gerekmez.</p></div>
 <div class="sp rv"><h3>Merkeziniz kurulsun</h3><p>Logonuz, renkleriniz ve antet bilgilerinizle kendi paneliniz hazırlanır.<br><span class="url">merkeziniz.serenus.com.tr</span></p></div>
-<div class="sp rv"><h3>Ekibinizle kullanmaya başlayın</h3><p>Uzmanlarınızı ve personelinizi ekleyin, yetkilerini belirleyin. Takıldığınız yerde bizimle iletişime geçin.</p></div>
+<div class="sp rv"><h3>Ekibinizle kullanmaya başlayın</h3><p>Uzmanlarınızı ve ekibinizi ekleyin, yetkilerini belirleyin. Takıldığınız yerde bizimle iletişime geçin.</p></div>
 </div>
 </div></section>
 
@@ -268,6 +305,14 @@ document.getElementById('f').addEventListener('submit',function(e){
 });
 var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12}):null;
 document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+(function(){var t=document.getElementById('trk'),mk=document.getElementById('mk'),b=mk.querySelectorAll('.mt button'),n=0,tm,paused=false;
+function go(i){n=(i+3)%3;t.style.transform='translateX(-'+n*100+'%)';b.forEach(function(x,k){x.classList.toggle('on',k==n)})}
+b.forEach(function(x){x.addEventListener('click',function(){go(+x.dataset.i);reset()})});
+function reset(){clearInterval(tm);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)tm=setInterval(function(){if(!paused)go(n+1)},4500)}
+mk.addEventListener('mouseenter',function(){paused=true});mk.addEventListener('mouseleave',function(){paused=false});
+var sx=null;mk.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;paused=true},{passive:true});
+mk.addEventListener('touchend',function(e){if(sx!==null){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40){go(n+(d<0?1:-1));reset()}}sx=null;paused=false});
+reset()})();
 </script>
 </body>
 </html>
